@@ -1,7 +1,6 @@
 {
-  "rewrites": [
-    { "source": "/medicalc/guide", "destination": "/medicalc/guide.html" },
-    { "source": "/medicalc/((?!bundle\\.js|sw\\.js|manifest\\.json|icon-.*\\.png|.*\\.png|.*\\.svg|.*\\.js|.*\\.css).*)", "destination": "/medicalc/index.html" },
-    { "source": "/medicalc", "destination": "/medicalc/index.html" }
+  "redirects": [
+    { "source": "/medicalc", "destination": "https://medicalc.vrndai.com", "permanent": false },
+    { "source": "/medicalc/:path*", "destination": "https://medicalc.vrndai.com/:path*", "permanent": false }
   ]
 }
