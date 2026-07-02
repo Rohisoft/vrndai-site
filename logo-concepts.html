@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VRNDAI — Logo Concepts</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #06060f;
+      color: #e2e8f0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      padding: 60px 24px;
+    }
+    .page-title {
+      text-align: center;
+      font-size: 13px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: #6366f1; margin-bottom: 12px;
+    }
+    h1 {
+      text-align: center; font-size: clamp(28px,5vw,48px);
+      font-weight: 900; color: #fff; letter-spacing: -1.5px; margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center; color: #64748b; font-size: 15px; margin-bottom: 60px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px; max-width: 1100px; margin: 0 auto;
+    }
+
+    .card {
+      background: #0c0c1c;
+      border: 1px solid rgba(99,102,241,0.15);
+      border-radius: 20px;
+      padding: 36px 28px 28px;
+      display: flex; flex-direction: column; align-items: center;
+      cursor: pointer;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+      position: relative;
+    }
+    .card:hover {
+      border-color: rgba(99,102,241,0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(99,102,241,0.14);
+    }
+    .card.selected {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 1px #6366f1, 0 16px 48px rgba(99,102,241,0.2);
+    }
+    .card.selected::after {
+      content: '✓ Selected';
+      position: absolute; top: 14px; right: 16px;
+      background: #6366f1; color: #fff;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+      padding: 3px 10px; border-radius: 10px;
+    }
+
+    .icon-wrap {
+      width: 110px; height: 110px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+    }
+    .wordmark {
+      font-size: 20px; font-weight: 900; letter-spacing: 4px;
+      color: #fff; margin-bottom: 6px;
+    }
+    .concept-num  { font-size: 10px; color: #6366f1; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+    .concept-name { font-size: 15px; font-weight: 700; color: #c7d2fe; margin-bottom: 8px; }
+    .concept-desc { font-size: 12px; color: #64748b; text-align: center; line-height: 1.65; }
+
+    .divider { width: 32px; height: 1px; background: rgba(99,102,241,0.25); margin: 14px 0; }
+
+    footer-note {
+      display: block; text-align: center;
+      margin-top: 56px; font-size: 12px; color: #374151;
+    }
+  </style>
+</head>
+<body>
+
+<p class="page-title">VRNDAI Technologies</p>
+<h1>Logo Concepts</h1>
+<p class="subtitle">Click a concept to select it — share with your team to decide</p>
+
+<div class="grid">
+
+  <!-- ══ CONCEPT 1: ECOSYSTEM ══ -->
+  <div class="card" onclick="select(this)">
+    <div class="icon-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="110" height="110">
+        <defs>
+          <filter id="glow1" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- background -->
+        <rect x="4" y="4" width="92" height="92" rx="22" fill="#0d0d28"/>
+        <rect x="4" y="4" width="92" height="92" rx="22" fill="none" stroke="#6366f1" stroke-width="1" stroke-opacity="0.2"/>
+
+        <!-- horizontal dashed connectors -->
+        <line x1="24" y1="22" x2="76" y2="22" stroke="#6366f1" stroke-width="1" stroke-dasharray="3,4" stroke-opacity="0.35"/>
+        <line x1="34" y1="40" x2="66" y2="40" stroke="#6366f1" stroke-width="1" stroke-dasharray="3,4" stroke-opacity="0.25"/>
+
+        <!-- left arm lines -->
+        <line x1="24" y1="22" x2="34" y2="40" stroke="#818cf8" stroke-width="1.8" stroke-opacity="0.7"/>
+        <line x1="34" y1="40" x2="50" y2="62" stroke="#6366f1" stroke-width="1.8" stroke-opacity="0.7"/>
+        <!-- right arm lines -->
+        <line x1="76" y1="22" x2="66" y2="40" stroke="#a78bfa" stroke-width="1.8" stroke-opacity="0.7"/>
+        <line x1="66" y1="40" x2="50" y2="62" stroke="#7c3aed" stroke-width="1.8" stroke-opacity="0.7"/>
+
+        <!-- nodes: top-left -->
+        <rect x="17" y="15" width="14" height="14" rx="3" fill="#4f46e5" filter="url(#glow1)"/>
+        <rect x="19" y="17" width="10" height="10" rx="2" fill="#818cf8"/>
+        <!-- nodes: top-right -->
+        <rect x="69" y="15" width="14" height="14" rx="3" fill="#6d28d9" filter="url(#glow1)"/>
+        <rect x="71" y="17" width="10" height="10" rx="2" fill="#a78bfa"/>
+        <!-- nodes: mid-left -->
+        <rect x="27" y="33" width="14" height="14" rx="3" fill="#4338ca"/>
+        <rect x="29" y="35" width="10" height="10" rx="2" fill="#6366f1"/>
+        <!-- nodes: mid-right -->
+        <rect x="59" y="33" width="14" height="14" rx="3" fill="#5b21b6"/>
+        <rect x="61" y="35" width="10" height="10" rx="2" fill="#8b5cf6"/>
+        <!-- node: apex (larger) -->
+        <rect x="42" y="55" width="16" height="16" rx="4" fill="#4f46e5" filter="url(#glow1)"/>
+        <rect x="44" y="57" width="12" height="12" rx="3" fill="#c4b5fd"/>
+        <circle cx="50" cy="63" r="2.5" fill="#fff" opacity="0.9"/>
+      </svg>
+    </div>
+    <div class="wordmark">VRNDAI</div>
+    <div class="divider"></div>
+    <div class="concept-num">Concept 01</div>
+    <div class="concept-name">The Ecosystem</div>
+    <div class="concept-desc">V made of connected product nodes — each block is an app. Shows your multi-product digital platform vision.</div>
+  </div>
+
+  <!-- ══ CONCEPT 2: TRANSFORMATION ══ -->
+  <div class="card" onclick="select(this)">
+    <div class="icon-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="110" height="110">
+        <defs>
+          <linearGradient id="rg2" x1="50" y1="18" x2="50" y2="66" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#818cf8"/>
+            <stop offset="100%" stop-color="#7c3aed"/>
+          </linearGradient>
+          <filter id="glow2" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <clipPath id="lhalf"><rect x="0" y="0" width="50" height="100"/></clipPath>
+          <clipPath id="rhalf"><rect x="50" y="0" width="50" height="100"/></clipPath>
+        </defs>
+        <rect x="4" y="4" width="92" height="92" rx="22" fill="#0d0d28"/>
+        <rect x="4" y="4" width="92" height="92" rx="22" fill="none" stroke="#6366f1" stroke-width="1" stroke-opacity="0.2"/>
+
+        <!-- Subtle divider -->
+        <line x1="50" y1="12" x2="50" y2="88" stroke="#6366f1" stroke-width="0.8" stroke-dasharray="4,5" stroke-opacity="0.2"/>
+
+        <!-- LEFT ARM — dashed grey (old/manual) -->
+        <g clip-path="url(#lhalf)">
+          <line x1="20" y1="20" x2="50" y2="66" stroke="#374151" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="5,5"/>
+          <circle cx="20" cy="20" r="5" fill="#374151"/>
+        </g>
+
+        <!-- RIGHT ARM — solid indigo (new/digital) -->
+        <g clip-path="url(#rhalf)">
+          <line x1="80" y1="20" x2="50" y2="66" stroke="url(#rg2)" stroke-width="4.5" stroke-linecap="round"/>
+          <circle cx="80" cy="20" r="5" fill="#818cf8" filter="url(#glow2)"/>
+          <circle cx="80" cy="20" r="3" fill="#c4b5fd"/>
+        </g>
+
+        <!-- Apex -->
+        <circle cx="50" cy="66" r="6.5" fill="#6366f1" filter="url(#glow2)"/>
+        <circle cx="50" cy="66" r="4" fill="#a5b4fc"/>
+        <circle cx="50" cy="66" r="1.8" fill="#fff" opacity="0.95"/>
+
+        <!-- Arrow at divider midpoint -->
+        <text x="50" y="46" text-anchor="middle" font-size="13" fill="#6366f1" font-weight="900" opacity="0.9">→</text>
+
+        <!-- Labels -->
+        <text x="27" y="80" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#4b5563" letter-spacing="1">MANUAL</text>
+        <text x="73" y="80" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#818cf8" letter-spacing="1">DIGITAL</text>
+      </svg>
+    </div>
+    <div class="wordmark">VRNDAI</div>
+    <div class="divider"></div>
+    <div class="concept-num">Concept 02</div>
+    <div class="concept-name">The Transformation</div>
+    <div class="concept-desc">Left = old manual way (dashed, faded). Right = your digital solution (solid, bright). Arrow = VRNDAI in the middle doing the transformation.</div>
+  </div>
+
+  <!-- ══ CONCEPT 3: RISING BARS ══ -->
+  <div class="card" onclick="select(this)">
+    <div class="icon-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="110" height="110">
+        <defs>
+          <linearGradient id="b1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3730a3"/><stop offset="100%" stop-color="#1e1b4b"/></linearGradient>
+          <linearGradient id="b2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4f46e5"/><stop offset="100%" stop-color="#312e81"/></linearGradient>
+          <linearGradient id="b3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#4338ca"/></linearGradient>
+          <linearGradient id="b4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a5b4fc"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+          <linearGradient id="b5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#4f46e5"/></linearGradient>
+          <filter id="glow3" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <rect x="4" y="4" width="92" height="92" rx="22" fill="#0d0d28"/>
+        <rect x="4" y="4" width="92" height="92" rx="22" fill="none" stroke="#6366f1" stroke-width="1" stroke-opacity="0.2"/>
+
+        <!-- 7 bars — heights: 22,34,48,60,48,34,22 — bottom at y=82 -->
+        <!-- bar 1 -->
+        <rect x="13" y="60" width="9" height="22" rx="3" fill="url(#b1g)" opacity="0.7"/>
+        <!-- bar 2 -->
+        <rect x="25" y="48" width="9" height="34" rx="3" fill="url(#b2g)" opacity="0.8"/>
+        <!-- bar 3 -->
+        <rect x="37" y="34" width="9" height="48" rx="3" fill="url(#b3g)" opacity="0.9"/>
+        <!-- bar 4 (peak) -->
+        <rect x="49" y="22" width="9" height="60" rx="3" fill="url(#b4g)" filter="url(#glow3)"/>
+        <!-- bar 5 -->
+        <rect x="61" y="34" width="9" height="48" rx="3" fill="url(#b3g)" opacity="0.9"/>
+        <!-- bar 6 -->
+        <rect x="73" y="48" width="9" height="34" rx="3" fill="url(#b2g)" opacity="0.8"/>
+        <!-- bar 7 -->
+        <!-- skip last, 6 bars look better -->
+
+        <!-- Peak dot glow -->
+        <circle cx="53.5" cy="22" r="5" fill="#a5b4fc" filter="url(#glow3)" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="wordmark">VRNDAI</div>
+    <div class="divider"></div>
+    <div class="concept-num">Concept 03</div>
+    <div class="concept-name">The Rising Peak</div>
+    <div class="concept-desc">Rising bars forming a peak — data-inspired, shows business growth through automation. Clean and modern like analytics dashboards.</div>
+  </div>
+
+  <!-- ══ CONCEPT 4: DIAMOND LENS ══ -->
+  <div class="card" onclick="select(this)">
+    <div class="icon-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="110" height="110">
+        <defs>
+          <linearGradient id="vg4" x1="50" y1="22" x2="50" y2="68" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#a5b4fc"/>
+            <stop offset="100%" stop-color="#6366f1"/>
+          </linearGradient>
+          <filter id="glow4" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glow4b" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <rect x="4" y="4" width="92" height="92" rx="22" fill="#0d0d28"/>
+
+        <!-- Outer diamond -->
+        <polygon points="50,8 92,50 50,92 8,50"
+          fill="rgba(99,102,241,0.05)"
+          stroke="#6366f1" stroke-width="1.5" stroke-opacity="0.5"/>
+
+        <!-- Inner diamond (smaller, rotated slightly) -->
+        <polygon points="50,18 82,50 50,82 18,50"
+          fill="none"
+          stroke="#6366f1" stroke-width="0.8" stroke-opacity="0.2"/>
+
+        <!-- V inside diamond -->
+        <line x1="26" y1="30" x2="50" y2="66" stroke="url(#vg4)" stroke-width="5" stroke-linecap="round" filter="url(#glow4)"/>
+        <line x1="74" y1="30" x2="50" y2="66" stroke="url(#vg4)" stroke-width="5" stroke-linecap="round" filter="url(#glow4)"/>
+
+        <!-- Nodes at diamond corners — top left right bottom -->
+        <circle cx="50" cy="8"  r="3.5" fill="#6366f1" opacity="0.5"/>
+        <circle cx="92" cy="50" r="3.5" fill="#6366f1" opacity="0.5"/>
+        <circle cx="50" cy="92" r="3.5" fill="#6366f1" opacity="0.5"/>
+        <circle cx="8"  cy="50" r="3.5" fill="#6366f1" opacity="0.5"/>
+
+        <!-- V top nodes -->
+        <circle cx="26" cy="30" r="5" fill="#6366f1" filter="url(#glow4)"/>
+        <circle cx="26" cy="30" r="3" fill="#a5b4fc"/>
+        <circle cx="74" cy="30" r="5" fill="#6366f1" filter="url(#glow4)"/>
+        <circle cx="74" cy="30" r="3" fill="#a5b4fc"/>
+
+        <!-- Apex -->
+        <circle cx="50" cy="66" r="7" fill="#4f46e5" filter="url(#glow4b)"/>
+        <circle cx="50" cy="66" r="4.5" fill="#818cf8"/>
+        <circle cx="50" cy="66" r="2" fill="#fff" opacity="0.95"/>
+      </svg>
+    </div>
+    <div class="wordmark">VRNDAI</div>
+    <div class="divider"></div>
+    <div class="concept-num">Concept 04</div>
+    <div class="concept-name">The Diamond Lens</div>
+    <div class="concept-desc">Diamond outer shape = precision & focus. V inside = your brand mark. "Vision Realized" — seeing through complexity to deliver solutions.</div>
+  </div>
+
+  <!-- ══ CONCEPT 5: BLUEPRINT ══ -->
+  <div class="card" onclick="select(this)">
+    <div class="icon-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="110" height="110">
+        <defs>
+          <filter id="glow5" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- BG -->
+        <rect x="4" y="4" width="92" height="92" rx="22" fill="#06091a"/>
+        <rect x="4" y="4" width="92" height="92" rx="22" fill="none" stroke="#3b4fd4" stroke-width="1" stroke-opacity="0.35"/>
+
+        <!-- Grid lines -->
+        <line x1="4" y1="20" x2="96" y2="20" stroke="#3b82f6" stroke-width="0.4" stroke-opacity="0.12"/>
+        <line x1="4" y1="36" x2="96" y2="36" stroke="#3b82f6" stroke-width="0.4" stroke-opacity="0.12"/>
+        <line x1="4" y1="52" x2="96" y2="52" stroke="#3b82f6" stroke-width="0.4" stroke-opacity="0.12"/>
+        <line x1="4" y1="68" x2="96" y2="68" stroke="#3b82f6" stroke-width="0.4" stroke-opacity="0.12"/>
+        <line x1="4" y1="84" x2="96" y2="84" stroke="#3b82f6" stroke-width="0.4" stroke-opacity="0.12"/>
+        <line x1="20" y1="4" x2="20" y2="96" stroke="#3b82f6" stroke-width="0.4" stroke-opacity="0.12"/>
+        <line x1="36" y1="4" x2="36" y2="96" stroke="#3b82f6" stroke-width="0.4" stroke-opacity="0.12"/>
+        <line x1="52" y1="4" x2="52" y2="96" stroke="#3b82f6" stroke-width="0.4" stroke-opacity="0.12"/>
+        <line x1="68" y1="4" x2="68" y2="96" stroke="#3b82f6" stroke-width="0.4" stroke-opacity="0.12"/>
+        <line x1="84" y1="4" x2="84" y2="96" stroke="#3b82f6" stroke-width="0.4" stroke-opacity="0.12"/>
+
+        <!-- V arms — thin precise blueprint lines -->
+        <line x1="20" y1="22" x2="50" y2="70" stroke="#93c5fd" stroke-width="2" stroke-linecap="square"/>
+        <line x1="80" y1="22" x2="50" y2="70" stroke="#93c5fd" stroke-width="2" stroke-linecap="square"/>
+
+        <!-- Tick marks at top-left node -->
+        <line x1="13" y1="22" x2="27" y2="22" stroke="#60a5fa" stroke-width="1.2" stroke-opacity="0.8"/>
+        <line x1="20" y1="15" x2="20" y2="29" stroke="#60a5fa" stroke-width="1.2" stroke-opacity="0.8"/>
+        <!-- Tick marks at top-right node -->
+        <line x1="73" y1="22" x2="87" y2="22" stroke="#60a5fa" stroke-width="1.2" stroke-opacity="0.8"/>
+        <line x1="80" y1="15" x2="80" y2="29" stroke="#60a5fa" stroke-width="1.2" stroke-opacity="0.8"/>
+        <!-- Tick marks at apex -->
+        <line x1="43" y1="70" x2="57" y2="70" stroke="#60a5fa" stroke-width="1.2" stroke-opacity="0.8"/>
+        <line x1="50" y1="63" x2="50" y2="77" stroke="#60a5fa" stroke-width="1.2" stroke-opacity="0.8"/>
+
+        <!-- Dimension line (top, spans V width) -->
+        <line x1="20" y1="13" x2="80" y2="13" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.5"/>
+        <line x1="20" y1="10" x2="20" y2="16" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.5"/>
+        <line x1="80" y1="10" x2="80" y2="16" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.5"/>
+
+        <!-- Small angle arc at top-left node -->
+        <path d="M 26 22 A 6 6 0 0 1 23 27" fill="none" stroke="#60a5fa" stroke-width="0.8" stroke-opacity="0.6"/>
+
+        <!-- Node dots -->
+        <circle cx="20" cy="22" r="3.5" fill="#93c5fd" filter="url(#glow5)"/>
+        <circle cx="80" cy="22" r="3.5" fill="#93c5fd" filter="url(#glow5)"/>
+        <circle cx="50" cy="70" r="4"   fill="#60a5fa" filter="url(#glow5)"/>
+        <circle cx="50" cy="70" r="2"   fill="#bfdbfe"/>
+      </svg>
+    </div>
+    <div class="wordmark">VRNDAI</div>
+    <div class="divider"></div>
+    <div class="concept-num">Concept 05</div>
+    <div class="concept-name">The Blueprint</div>
+    <div class="concept-desc">Technical architectural drawing style — tick marks, grid, dimension lines. Represents precision engineering and "we build exactly to spec".</div>
+  </div>
+
+</div>
+
+<footer-note>Click any card to mark it · Share this page with your team · <a href="/" style="color:#6366f1">← Back to VRNDAI</a></footer-note>
+
+<script>
+  function select(el) {
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+</body>
+</html>

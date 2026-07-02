@@ -1,0 +1,13 @@
+# ── Vercel ────────────────────────────────────────────
+.vercel
+
+# ── macOS ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Editor ────────────────────────────────────────────
+.vscode/
+.idea/
+
+# ── MedicalC build (copied at deploy time, not source) ─
+medicalc/

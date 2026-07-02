@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VRNDAI — Vision Realized through Next-gen Digital Automation & Innovation</title>
+  <meta name="description" content="VRNDAI — Vision Realized through Next-gen Digital Automation & Innovation. We build smart digital products that transform how businesses operate." />
+  <meta name="keywords" content="VRNDAI, digital automation, digital innovation, software development, app development, digital transformation, pharmacy software, business apps India" />
+  <link rel="canonical" href="https://vrndai.com/" />
+  <meta property="og:title"       content="VRNDAI — Vision Realized through Next-gen Digital Automation & Innovation" />
+  <meta property="og:description" content="Vision Realized through Next-gen Digital Automation & Innovation. We build smart software that transforms real businesses." />
+  <meta property="og:url"         content="https://vrndai.com/" />
+  <meta property="og:type"        content="website" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:   #6366f1;
+      --primary-2: #818cf8;
+      --primary-3: #4f46e5;
+      --violet:    #7c3aed;
+      --bg:        #06060f;
+      --bg2:       #0c0c1c;
+      --bg3:       #10102a;
+      --border:    rgba(99,102,241,0.16);
+      --border-2:  rgba(99,102,241,0.28);
+      --text:      #e2e8f0;
+      --muted:     #8892b0;
+      --white:     #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── Navbar ───────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 5%;
+      background: rgba(6,6,15,0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand { display: flex; align-items: center; text-decoration: none; }
+    .nav-svg-logo { height: 34px; width: auto; display: block; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--primary), var(--violet));
+      color: #fff; font-weight: 700;
+      padding: 8px 22px; border-radius: 20px; text-decoration: none;
+      font-size: 13px; transition: opacity .2s, transform .15s;
+    }
+    .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* ── Hero ─────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 120px 5% 80px;
+      position: relative; overflow: hidden;
+    }
+    /* grid texture */
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+    /* radial glow */
+    .hero::before {
+      content: '';
+      position: absolute; top: -220px; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 900px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(99,102,241,0.1) 0%, rgba(124,58,237,0.04) 40%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      position: relative; z-index: 1;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(99,102,241,0.1); border: 1px solid var(--border-2);
+      border-radius: 20px; padding: 6px 18px; font-size: 12px;
+      color: var(--primary-2); margin-bottom: 28px; font-weight: 600; letter-spacing: 0.3px;
+    }
+    .hero h1 {
+      position: relative; z-index: 1;
+      font-size: clamp(36px, 7vw, 82px);
+      font-weight: 900; line-height: 1.05; letter-spacing: -2.5px;
+      color: var(--white); max-width: 960px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, #a5b4fc 0%, #c084fc 50%, #818cf8 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      position: relative; z-index: 1;
+      font-size: clamp(16px, 2vw, 19px); color: var(--muted);
+      max-width: 580px; margin: 24px auto 12px; line-height: 1.75;
+    }
+    .hero-acronym {
+      position: relative; z-index: 1;
+      font-size: 11px; color: rgba(99,102,241,0.6);
+      letter-spacing: 4px; text-transform: uppercase; font-weight: 600;
+      margin-bottom: 40px;
+    }
+    .hero-btns { position: relative; z-index: 1; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--violet));
+      color: #fff; font-weight: 700;
+      padding: 14px 34px; border-radius: 50px; text-decoration: none;
+      font-size: 15px; transition: opacity .2s, transform .15s;
+      display: inline-flex; align-items: center; gap: 8px;
+      box-shadow: 0 4px 24px rgba(99,102,241,0.35);
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+    .btn-outline {
+      border: 1.5px solid var(--border-2); color: var(--text);
+      padding: 14px 34px; border-radius: 50px; text-decoration: none;
+      font-size: 15px; font-weight: 600; transition: all .2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary-2); }
+
+    /* ── Stats ────────────────────────────────────────── */
+    .stats {
+      display: flex; justify-content: center;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      background: var(--bg2); flex-wrap: wrap;
+    }
+    .stat {
+      flex: 1; min-width: 140px; text-align: center;
+      padding: 32px 20px;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-size: 36px; font-weight: 900; letter-spacing: -1px;
+      background: linear-gradient(135deg, var(--primary-2), #c084fc);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+    /* ── Section common ───────────────────────────────── */
+    section { padding: 100px 5%; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(99,102,241,0.1); border: 1px solid var(--border-2);
+      border-radius: 20px; padding: 5px 16px;
+      font-size: 11px; color: var(--primary-2);
+      text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 50px); font-weight: 800;
+      color: var(--white); letter-spacing: -1px; margin-bottom: 16px; line-height: 1.12;
+    }
+    .section-sub { font-size: 17px; color: var(--muted); max-width: 560px; line-height: 1.75; }
+
+    /* ── Products ─────────────────────────────────────── */
+    #products { background: var(--bg2); }
+    .products-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px; margin-top: 56px;
+    }
+    .product-card {
+      background: var(--bg3); border: 1px solid var(--border); border-radius: 20px;
+      padding: 32px; position: relative; overflow: hidden;
+      transition: transform .2s, border-color .2s, box-shadow .2s;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-2);
+      box-shadow: 0 12px 40px rgba(99,102,241,0.12);
+    }
+    .product-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), var(--violet), transparent);
+    }
+    .product-live {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25);
+      border-radius: 12px; padding: 3px 10px; font-size: 11px; color: #34d399;
+      font-weight: 600; margin-bottom: 20px;
+    }
+    .product-live-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: #34d399;
+      animation: pulse-dot 1.5s infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity: 1; } 50% { opacity: 0.4; }
+    }
+    .product-soon {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.2);
+      border-radius: 12px; padding: 3px 10px; font-size: 11px; color: #fbbf24;
+      font-weight: 600; margin-bottom: 20px;
+    }
+    .product-icon { font-size: 40px; margin-bottom: 16px; }
+    .product-name { font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 10px; }
+    .product-desc { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 24px; }
+    .product-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+    .product-tag {
+      background: rgba(99,102,241,0.08); border: 1px solid var(--border);
+      border-radius: 8px; padding: 4px 10px; font-size: 11px; color: var(--muted);
+    }
+    .product-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--violet));
+      color: #fff; font-weight: 700;
+      padding: 10px 22px; border-radius: 12px; text-decoration: none; font-size: 13px;
+      transition: opacity .2s, transform .15s;
+      box-shadow: 0 4px 16px rgba(99,102,241,0.3);
+    }
+    .product-link:hover { opacity: 0.88; transform: translateY(-1px); }
+    .product-link-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1.5px solid var(--border); color: var(--muted);
+      padding: 10px 22px; border-radius: 12px; font-size: 13px; font-weight: 600;
+      cursor: default; opacity: 0.5;
+    }
+
+    /* ── Services ─────────────────────────────────────── */
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px; margin-top: 56px;
+    }
+    .service-card {
+      background: var(--bg2); border: 1px solid var(--border); border-radius: 16px;
+      padding: 28px; transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .service-card:hover {
+      border-color: var(--border-2); transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.08);
+    }
+    .service-icon {
+      font-size: 26px;
+      background: rgba(99,102,241,0.1); border: 1px solid var(--border);
+      border-radius: 12px; width: 52px; height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .service-name { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .service-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+    /* ── About ────────────────────────────────────────── */
+    #about { background: var(--bg2); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; margin-top: 56px;
+    }
+    .about-points { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+    .about-point {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px;
+      transition: border-color .2s;
+    }
+    .about-point:hover { border-color: var(--border-2); }
+    .about-point-icon { font-size: 22px; flex-shrink: 0; }
+    .about-point-title { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .about-point-desc  { font-size: 13px; color: var(--muted); line-height: 1.65; }
+    .about-card {
+      background: var(--bg3); border: 1px solid var(--border); border-radius: 20px;
+      padding: 40px; display: flex; flex-direction: column; gap: 24px;
+    }
+    .about-card-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .about-big {
+      font-size: 48px; font-weight: 900; letter-spacing: -2px;
+      background: linear-gradient(135deg, var(--primary-2), #c084fc);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-big-label { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .about-divider { border: none; border-top: 1px solid var(--border); }
+
+    /* ── Contact ──────────────────────────────────────── */
+    .contact-wrap { max-width: 640px; margin: 56px auto 0; text-align: center; }
+    .contact-cards {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 36px;
+    }
+    .contact-card {
+      background: var(--bg2); border: 1px solid var(--border); border-radius: 16px;
+      padding: 20px 28px; display: flex; align-items: center; gap: 12px;
+      text-decoration: none; transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .contact-card:hover {
+      border-color: var(--border-2); transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.1);
+    }
+    .contact-card-icon { font-size: 22px; }
+    .contact-card-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .contact-card-val   { font-size: 14px; font-weight: 600; color: var(--white); }
+
+    /* ── Footer ───────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border); padding: 40px 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px; background: var(--bg);
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: var(--muted); font-size: 13px; text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--primary-2); }
+    .footer-copy { font-size: 12px; color: var(--muted); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-card { padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navbar ──────────────────────────────────────── -->
+<nav>
+  <a class="nav-brand" href="/">
+    <img src="/assets/logo.svg" alt="VRNDAI" class="nav-svg-logo" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Get in Touch →</a>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-badge">✦ Vision Realized through Next-gen Digital Automation &amp; Innovation</div>
+  <h1>We Build Software<br><span>That Solves</span> Real Problems</h1>
+  <p>VRNDAI is a software and technology studio helping businesses grow through smart digital products, modern web &amp; mobile apps, and end-to-end digital transformation.</p>
+  <p class="hero-acronym">V &nbsp;·&nbsp; R &nbsp;·&nbsp; N &nbsp;·&nbsp; D &nbsp;·&nbsp; A &nbsp;·&nbsp; I</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="#products">See Our Products →</a>
+    <a class="btn-outline"  href="#contact">Work With Us</a>
+  </div>
+</section>
+
+<!-- ── Stats ──────────────────────────────────────── -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">2+</div><div class="stat-label">Products Live</div></div>
+  <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Businesses Helped</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Custom Built</div></div>
+  <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Cloud Uptime</div></div>
+</div>
+
+<!-- ── Products ───────────────────────────────────── -->
+<section id="products">
+  <div class="section-tag">Our Products</div>
+  <h2 class="section-title">Software We've Built</h2>
+  <p class="section-sub">Real products solving real daily problems — for businesses across India.</p>
+
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="product-live"><div class="product-live-dot"></div> Live Now</div>
+      <div class="product-icon">💊</div>
+      <div class="product-name">MedicalC</div>
+      <div class="product-desc">A complete pharmacy &amp; medical store management system. Billing, inventory, customer credit tracking, AI-powered wholesale bill scanning, and sales reports — everything a medical store needs, in a browser.</div>
+      <div class="product-tags">
+        <span class="product-tag">PWA</span>
+        <span class="product-tag">Multi-Tenant</span>
+        <span class="product-tag">AI Scan</span>
+        <span class="product-tag">SaaS</span>
+        <span class="product-tag">Pharmacy</span>
+      </div>
+      <a class="product-link" href="/medicalc/">Launch App →</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-soon">🔧 In Development</div>
+      <div class="product-icon">🏪</div>
+      <div class="product-name">RetailX</div>
+      <div class="product-desc">General retail store management — billing, inventory, GST reports, and supplier management for any type of shop or small business.</div>
+      <div class="product-tags">
+        <span class="product-tag">Retail</span>
+        <span class="product-tag">GST</span>
+        <span class="product-tag">Inventory</span>
+      </div>
+      <span class="product-link-ghost">Coming Soon</span>
+    </div>
+
+    <div class="product-card">
+      <div class="product-soon">🔧 In Development</div>
+      <div class="product-icon">🏥</div>
+      <div class="product-name">ClinicOS</div>
+      <div class="product-desc">Doctor clinic management — patient records, appointments, prescriptions, billing, and follow-up tracking all in one place.</div>
+      <div class="product-tags">
+        <span class="product-tag">Healthcare</span>
+        <span class="product-tag">EMR</span>
+        <span class="product-tag">Appointments</span>
+      </div>
+      <span class="product-link-ghost">Coming Soon</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Services ───────────────────────────────────── -->
+<section id="services" style="background: var(--bg2);">
+  <div class="section-tag">What We Do</div>
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-sub">End-to-end digital solutions — from idea to a live product your team can use tomorrow.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <div class="service-name">Mobile App Development</div>
+      <div class="service-desc">Cross-platform apps for iOS and Android built with React Native. One codebase, runs everywhere, feels native.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌐</div>
+      <div class="service-name">Web App Development</div>
+      <div class="service-desc">Fast, modern web apps and PWAs that work in any browser, on any device. No app store needed.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">☁️</div>
+      <div class="service-name">SaaS & Cloud Products</div>
+      <div class="service-desc">Multi-tenant SaaS platforms built on Supabase, Vercel, and modern cloud infra. Scales automatically.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <div class="service-name">AI Integration</div>
+      <div class="service-desc">Practical AI features — document scanning, automated data entry, smart suggestions — built into your product.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔄</div>
+      <div class="service-name">Digital Transformation</div>
+      <div class="service-desc">Move your business from paper and spreadsheets to a fully digital, automated workflow. We handle everything.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🛠️</div>
+      <div class="service-name">Custom Business Tools</div>
+      <div class="service-desc">Billing software, inventory systems, CRM, ERP — built exactly for your workflow, not a generic template.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ───────────────────────────────────────── -->
+<section id="about">
+  <div class="section-tag">About VRNDAI</div>
+  <div class="about-grid">
+    <div>
+      <h2 class="section-title">Built for India's<br>Growing Businesses</h2>
+      <p class="section-sub" style="max-width:100%">We are a software and technology studio focused on building products that solve real, everyday problems for Indian businesses — from a single medical store to a growing retail chain.</p>
+      <div class="about-points">
+        <div class="about-point">
+          <div class="about-point-icon">🎯</div>
+          <div>
+            <div class="about-point-title">Problem-First Approach</div>
+            <div class="about-point-desc">We start with your actual pain point — not a technology stack. Then we build the simplest thing that works.</div>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-icon">⚡</div>
+          <div>
+            <div class="about-point-title">Ship Fast, Improve Always</div>
+            <div class="about-point-desc">We launch quickly so you start using the product, then improve it based on real feedback from real users.</div>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-icon">🔒</div>
+          <div>
+            <div class="about-point-title">Your Data, Your Control</div>
+            <div class="about-point-desc">Every product we build gives you full ownership and transparency over your business data.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-card">
+      <div>
+        <div class="about-card-title">Founded</div>
+        <div class="about-big">2024</div>
+        <div class="about-big-label">Building products in India</div>
+      </div>
+      <hr class="about-divider" />
+      <div>
+        <div class="about-card-title">Headquarters</div>
+        <div style="font-size:20px; font-weight:700; color:var(--white); margin-top:6px;">India 🇮🇳</div>
+        <div class="about-big-label" style="margin-top:4px">Serving businesses pan-India</div>
+      </div>
+      <hr class="about-divider" />
+      <div>
+        <div class="about-card-title">Tech Stack</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+          <span class="product-tag">React Native</span>
+          <span class="product-tag">Supabase</span>
+          <span class="product-tag">Vercel</span>
+          <span class="product-tag">Node.js</span>
+          <span class="product-tag">PostgreSQL</span>
+        </div>
+      </div>
+      <hr class="about-divider" />
+      <div>
+        <div class="about-card-title">Founder</div>
+        <div style="font-size:18px; font-weight:700; color:var(--white); margin-top:6px;">Samrath Panchal</div>
+        <div class="about-big-label" style="margin-top:4px">Software Engineer &amp; Product Builder</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ─────────────────────────────────────── -->
+<section id="contact" style="background: var(--bg2);">
+  <div class="contact-wrap">
+    <div class="section-tag">Contact</div>
+    <h2 class="section-title">Let's Build Something</h2>
+    <p class="section-sub" style="margin:0 auto">Have a business problem to solve? Want to digitise your operations? Let's talk about how we can help.</p>
+    <div class="contact-cards">
+      <a class="contact-card" href="tel:+918878069736">
+        <div class="contact-card-icon">📞</div>
+        <div>
+          <div class="contact-card-label">Phone / WhatsApp</div>
+          <div class="contact-card-val">+91 88780 69736</div>
+        </div>
+      </a>
+      <a class="contact-card" href="mailto:hello@vrndai.com">
+        <div class="contact-card-icon">✉️</div>
+        <div>
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-val">hello@vrndai.com</div>
+        </div>
+      </a>
+      <a class="contact-card" href="https://wa.me/918878069736?text=Hi%20VRNDAI%2C%20I%20want%20to%20discuss%20a%20project" target="_blank">
+        <div class="contact-card-icon">💬</div>
+        <div>
+          <div class="contact-card-label">WhatsApp</div>
+          <div class="contact-card-val">Message us now →</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────── -->
+<footer>
+  <div>
+    <img src="/assets/logo.svg" alt="VRNDAI" style="height:30px; width:auto; opacity:0.85;" />
+    <div style="font-size:10px; color:var(--muted); margin-top:8px; letter-spacing:0.3px;">
+      Vision Realized through Next-gen Digital Automation &amp; Innovation
+    </div>
+  </div>
+  <div class="footer-links">
+    <a href="#products">Products</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="/medicalc/">MedicalC App</a>
+  </div>
+  <div class="footer-copy">© 2024–2026 VRNDAI Technologies. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
